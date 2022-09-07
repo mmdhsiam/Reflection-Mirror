@@ -192,17 +192,17 @@ def get_readable_message():
                 elif download.status() == MirrorStatus.STATUS_EXTRACTING:
                     msg += f"\n<b>├☢️Extracted:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 msg += f"\n<b>├⚡️Speed:</b> {download.speed()}"
-                msg += f"\n<b>├⏰ETA:</b> {download.eta()}"
-                msg += f"\n<b>├🕑Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
+                msg += f"\n<b>├🕑ETA:</b> {download.eta()}"
+                msg += f"\n<b>├⏰Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
                 msg += f"\n<b>├⚙️Engine :</b> {download.eng()}"
                 msg += f"\n<b>├⚠️Warn: </b> <code>/warn {download.message.from_user.id}</code>"
                 try:
-                    msg += f"\n<b>├🌱Seeders:</b> {download.aria_download().num_seeders}" \
+                    msg += f"\n<b>├🐣Seeders:</b> {download.aria_download().num_seeders}" \
                            f" | <b>├🧲Peers:</b> {download.aria_download().connections}"
                 except BaseException:
                     pass
                 try:
-                    msg += f"\n<b>├🌱Seeders:</b> {download.torrent_info().num_seeds}" \
+                    msg += f"\n<b>├🐣Seeders:</b> {download.torrent_info().num_seeds}" \
                            f" | <b>├🧲Leechers:</b> {download.torrent_info().num_leechs}"
                 except BaseException:
                     pass
@@ -213,7 +213,7 @@ def get_readable_message():
                     except BaseException:
                         pass
                 else:
-                    msg += f'\n<b>├User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
+                    msg += f'\n<b>├🧶User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
                 msg += f"\n<b>├🪐Size: </b>{download.size()}"
@@ -222,9 +222,9 @@ def get_readable_message():
                 msg += f" | <b>├🔺Uploaded: </b>{get_readable_file_size(download.torrent_info().uploaded)}"
                 msg += f"\n<b>├🧿Ratio: </b>{round(download.torrent_info().ratio, 3)}"
                 msg += f" | <b>├🕑Time: </b>{get_readable_time(download.torrent_info().seeding_time)}"
-                msg += f"\n<b>├🕑Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
+                msg += f"\n<b>├⏰Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
             else:
-                msg += f"\n<b>⚙️├Engine :</b> {download.eng()}"
+                msg += f"\n<b>├⚙️Engine :</b> {download.eng()}"
                 msg += f"\n<b>├☢️Size: </b>{download.size()}"
                 #msg += f"\n<b>▬▬꧁𓊈𒆜🅼🅼🅳🅷_🆂🅸🅰🅼𒆜𓊉꧂▬▬</b>"
             msg += f"\n<b>╰❎Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
