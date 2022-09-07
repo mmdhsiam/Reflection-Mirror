@@ -173,12 +173,12 @@ def get_readable_message():
                 globals()['PAGE_NO'] -= 1
         for index, download in enumerate(
                 list(download_dict.values())[COUNT:], start=1):
-            msg += f"<b>Name:</b> <code>{escape(str(download.name()))}</code>"
-            msg += f"\n<b>╭Status:</b> <i>{download.status()}</i>"
+            msg += f"<b>🍄Name:</b> <code>{escape(str(download.name()))}</code>"
+            msg += f"\n<b>╭🐝Status:</b> <i>{download.status()}</i>"
             if download.status() not in [
                     MirrorStatus.STATUS_SPLITTING,
                     MirrorStatus.STATUS_SEEDING]:
-                msg += f"\n<b>├</b>{get_progress_bar_string(download)} {download.progress()}"
+                msg += f"\n<b>├🪐</b>{get_progress_bar_string(download)} {download.progress()}"
                 if download.status() in [MirrorStatus.STATUS_DOWNLOADING,
                                          MirrorStatus.STATUS_WAITING,
                                          MirrorStatus.STATUS_PAUSED]:
@@ -216,7 +216,7 @@ def get_readable_message():
                     msg += f'\n<b>├User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
-                msg += f"\n<b>├Size: </b>{download.size()}"
+                msg += f"\n<b>├🪐Size: </b>{download.size()}"
                 msg += f"\n<b>⚙️├Engine:</b> <code>qBittorrent v4.4.2</code>"
                 msg += f"\n<b>├⚡️Speed: </b>{get_readable_file_size(download.torrent_info().upspeed)}/s"
                 msg += f" | <b>├🔺Uploaded: </b>{get_readable_file_size(download.torrent_info().uploaded)}"
@@ -226,9 +226,9 @@ def get_readable_message():
             else:
                 msg += f"\n<b>⚙️├Engine :</b> {download.eng()}"
                 msg += f"\n<b>├☢️Size: </b>{download.size()}"
-                #msg += f"\n<b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬</b>"
+                #msg += f"\n<b>▬▬꧁𓊈𒆜🅼🅼🅳🅷_🆂🅸🅰🅼𒆜𓊉꧂▬▬</b>"
             msg += f"\n<b>╰❎Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
-            msg += f"\n<b>[~~꧁𓊈𒆜🅼🅼🅳🅷_🆂🅸🅰🅼𒆜𓊉꧂~~]</b>"
+            msg += f"\n<b>[~~===========~~]</b>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
