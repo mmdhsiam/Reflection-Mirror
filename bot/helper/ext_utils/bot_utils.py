@@ -28,28 +28,28 @@ PAGE_NO = 1
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading...📤"
-    STATUS_DOWNLOADING = "Downloading...📥"
-    STATUS_CLONING = "Cloning...♻️"
-    STATUS_WAITING = "Queued...💤"
-    STATUS_PAUSED = "Paused...⛔️"
-    STATUS_ARCHIVING = "Archiving...🔐"
-    STATUS_EXTRACTING = "Extracting...📂"
-    STATUS_SPLITTING = "Splitting...✂️"
-    STATUS_CHECKING = "CheckingUp...📝"
-    STATUS_SEEDING = "Seeding...🌧"
+    STATUS_UPLOADING = "𓊈𒆜𝖀𝖕𝖑𝖔𝖆𝖉𝖎𝖓𝖌𒆜𓊉...📤"
+    STATUS_DOWNLOADING = "𓊈𒆜𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌𒆜𓊉...📥"
+    STATUS_CLONING = "𓊈𒆜𝕮𝖑𝖔𝖓𝖎𝖓𝖌𒆜𓊉...♻️"
+    STATUS_WAITING = "𓊈𒆜𝕼𝖚𝖊𝖚𝖊𝖉𒆜𓊉...💤"
+    STATUS_PAUSED = "𓊈𒆜𝕻𝖆𝖚𝖘𝖊𝖉𒆜𓊉...⛔️"
+    STATUS_ARCHIVING = "𓊈𒆜𝕬𝖗𝖈𝖍𝖎𝖛𝖎𝖓𝖌𒆜𓊉...🔐"
+    STATUS_EXTRACTING = "𓊈𒆜𝕰𝖝𝖙𝖗𝖆𝖈𝖙𝖎𝖓𝖌𒆜𓊉...📂"
+    STATUS_SPLITTING = "𓊈𒆜𝕾𝖕𝖑𝖎𝖙𝖙𝖎𝖓𝖌𒆜𓊉...✂️"
+    STATUS_CHECKING = "𓊈𒆜𝕮𝖍𝖊𝖈𝖐𝖎𝖓𝖌𝖀𝖕𒆜𓊉...📝"
+    STATUS_SEEDING = "𓊈𒆜𝕾𝖊𝖊𝖉𝖎𝖓𝖌𒆜𓊉...🌧"
 
 
 class EngineStatus:
-    STATUS_ARIA = "Aria2c v1.35.0"
-    STATUS_GD = "Google Api v2.51.0"
-    STATUS_MEGA = "MegaSDK v3.12.0"
-    STATUS_QB = "qBittorrent v4.3.9"
-    STATUS_TG = "Pyrogram v2.0.27"
-    STATUS_YT = "YT-dlp v22.5.18"
-    STATUS_EXT = "Extract | pExtract"
-    STATUS_SPLIT = "FFmpeg v2.9.1"
-    STATUS_ZIP = "p7zip v16.02"
+    STATUS_ARIA = "🅰🆁🅸🅰【2】🅲"
+    STATUS_GD = "🅶🅾🅾🅶🅻🅴 🅰🅿🅸"
+    STATUS_MEGA = "🅼🅴🅶🅰🆂🅳🅺"
+    STATUS_QB = "🆀🅱🅸🆃🆃🅾🆁🆁🅴🅽🆃"
+    STATUS_TG = "🅿🆈🆁🅾🅶🆁🅰🅼"
+    STATUS_YT = "🆈🆃-🅳🅻🅿"
+    STATUS_EXT = "🅴🆇🆃🆁🅰🅲🆃 |🅿🅴🆇🆃🆁🅰🅲🆃"
+    STATUS_SPLIT = "🅵🅵🅼🅿🅴🅶"
+    STATUS_ZIP = "🅿7🆉🅸🅿"
 
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
@@ -182,34 +182,34 @@ def get_readable_message():
                 if download.status() in [MirrorStatus.STATUS_DOWNLOADING,
                                          MirrorStatus.STATUS_WAITING,
                                          MirrorStatus.STATUS_PAUSED]:
-                    msg += f"\n<b>├Downloaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>├🔻Downloaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                    msg += f"\n<b>├Uploaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>├🔺Uploaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_CLONING:
-                    msg += f"\n<b>├Cloned:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>├🧿Cloned:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_ARCHIVING:
-                    msg += f"\n<b>├Archived:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>├⏰Archived:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_EXTRACTING:
-                    msg += f"\n<b>├Extracted:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
-                msg += f"\n<b>├Speed:</b> {download.speed()}"
-                msg += f"\n<b>├ETA:</b> {download.eta()}"
-                msg += f"\n<b>├Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
-                msg += f"\n<b>├Engine :</b> {download.eng()}"
-                msg += f"\n<b>├Warn: </b> <code>/warn {download.message.from_user.id}</code>"
+                    msg += f"\n<b>├☢️Extracted:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                msg += f"\n<b>├⚡️Speed:</b> {download.speed()}"
+                msg += f"\n<b>├⏰ETA:</b> {download.eta()}"
+                msg += f"\n<b>├🕑Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
+                msg += f"\n<b>├⚙️Engine :</b> {download.eng()}"
+                msg += f"\n<b>├⚠️Warn: </b> <code>/warn {download.message.from_user.id}</code>"
                 try:
-                    msg += f"\n<b>├Seeders:</b> {download.aria_download().num_seeders}" \
-                           f" | <b>🧲 Peers:</b> {download.aria_download().connections}"
+                    msg += f"\n<b>├🌱Seeders:</b> {download.aria_download().num_seeders}" \
+                           f" | <b>├🧲Peers:</b> {download.aria_download().connections}"
                 except BaseException:
                     pass
                 try:
-                    msg += f"\n<b>├Seeders:</b> {download.torrent_info().num_seeds}" \
-                           f" | <b>🧲 Leechers:</b> {download.torrent_info().num_leechs}"
+                    msg += f"\n<b>├🌱Seeders:</b> {download.torrent_info().num_seeds}" \
+                           f" | <b>├🧲Leechers:</b> {download.torrent_info().num_leechs}"
                 except BaseException:
                     pass
                 if download.message.chat.type != 'private':
                     try:
                         chatid = str(download.message.chat.id)[4:]
-                        msg += f'\n<b>├Source: </b><a href="https://t.me/c/{chatid}/{download.message.message_id}">{download.message.from_user.first_name}</a> | <b>Id :</b> <code>{download.message.from_user.id}</code>'
+                        msg += f'\n<b>├👤Source: </b><a href="https://t.me/c/{chatid}/{download.message.message_id}">{download.message.from_user.first_name}</a> | <b>Id :</b> <code>{download.message.from_user.id}</code>'
                     except BaseException:
                         pass
                 else:
@@ -217,17 +217,17 @@ def get_readable_message():
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
                 msg += f"\n<b>├Size: </b>{download.size()}"
-                msg += f"\n<b>├Engine:</b> <code>qBittorrent v4.4.2</code>"
-                msg += f"\n<b>├Speed: </b>{get_readable_file_size(download.torrent_info().upspeed)}/s"
-                msg += f" | <b>🔺Uploaded: </b>{get_readable_file_size(download.torrent_info().uploaded)}"
-                msg += f"\n<b>├Ratio: </b>{round(download.torrent_info().ratio, 3)}"
-                msg += f" | <b>├Time: </b>{get_readable_time(download.torrent_info().seeding_time)}"
-                msg += f"\n<b>├Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
+                msg += f"\n<b>⚙️├Engine:</b> <code>qBittorrent v4.4.2</code>"
+                msg += f"\n<b>├⚡️Speed: </b>{get_readable_file_size(download.torrent_info().upspeed)}/s"
+                msg += f" | <b>├🔺Uploaded: </b>{get_readable_file_size(download.torrent_info().uploaded)}"
+                msg += f"\n<b>├🧿Ratio: </b>{round(download.torrent_info().ratio, 3)}"
+                msg += f" | <b>├🕑Time: </b>{get_readable_time(download.torrent_info().seeding_time)}"
+                msg += f"\n<b>├🕑Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
             else:
-                msg += f"\n<b>├Engine :</b> {download.eng()}"
-                msg += f"\n<b>├Size: </b>{download.size()}"
+                msg += f"\n<b>⚙️├Engine :</b> {download.eng()}"
+                msg += f"\n<b>├☢️Size: </b>{download.size()}"
                 #msg += f"\n<b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬</b>"
-            msg += f"\n<b>╰Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+            msg += f"\n<b>╰❎Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += f"\n<b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬</b>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
@@ -435,13 +435,13 @@ def bot_sys_stats():
     cpuUsage = cpu_percent(interval=1)
     return f"""
 {TITLE_NAME} BOT STATS
-CPU:  {progress_bar(cpuUsage)} {cpuUsage}%
-RAM: {progress_bar(mem_p)} {mem_p}%
-DISK: {progress_bar(disk)} {disk}%
-T: {disk_t}GB | F: {disk_f}GB
+🖥 CPU:  {progress_bar(cpuUsage)} {cpuUsage}%
+🎮 RAM: {progress_bar(mem_p)} {mem_p}%
+💿 DISK: {progress_bar(disk)} {disk}%
+🟢 T: {disk_t}GB | F: {disk_f}GB
 Working For: {currentTime}
-T-DL: {recv} | T-UL: {sent}
-Made with ❤️ by Dipesh
+🔻T-DL: {recv} |🔺 T-UL: {sent}
+Made with ❤️ by Mmdh-Siam
 """
 
 
